@@ -1,12 +1,5 @@
 import $ from "jquery";
 
-const array = [
-    'Holberton Dashboard',
-    'Dashboard data for the students',
-    'Copyright - Holberton School'
-]
-
-array.forEach((elem) => {
-    const p = $(`<p>${elem}</p>`);
-    $("body").append(p);
-})
+$('body').append($('<p>Holberton Dashboard</p>'));
+$('body').append($('<p>Dashboard data for the students</p>'));
+$('body').append($('<p>Copyright - Holberton School</p>'));
