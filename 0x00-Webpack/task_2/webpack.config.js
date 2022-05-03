@@ -9,7 +9,10 @@ module.exports = {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js',
     },
-    performance: {hints: false},
+    performance: {
+		maxAssetSize: 1000000,
+    maxEntrypointSize: 1000000,
+	},
     module: {
         rules: [
             {
