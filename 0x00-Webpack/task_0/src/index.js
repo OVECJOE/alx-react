@@ -1,4 +1,4 @@
-const $ = require("jquery");
+import $ from "jquery";
 
 const array = [
     'Holberton Dashboard',
