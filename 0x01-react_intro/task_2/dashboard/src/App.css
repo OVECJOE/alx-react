@@ -35,3 +35,8 @@ body {
   text-align: center;
   margin: 0 1rem;
 }
+
+.App form {
+  display: flex;
+  gap: .6rem;
+}
