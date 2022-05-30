@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: "development",
@@ -8,12 +7,6 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve("./dist"),
-  },
-  devServer: {
-    hot: true,
-    contentBase: path.resolve("./dist"),
-    compress: true,
-    port: 8564,
   },
   performance: {
     maxAssetSize: 1000000,
@@ -44,10 +37,5 @@ module.exports = {
         ],
       },
     ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html"),
-    }),
-  ],
+  }
 };
