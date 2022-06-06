@@ -26,7 +26,7 @@ describe('App Component Tests', () => {
     });
 
     it('Does not contain CourseList component', () => {
-        expect(app.find('CourseList')).not.toBeDefined();
+        expect(app.find('CourseList')).toHaveLength(0);
     });
 
     it('Contains Footer component', () => {
