@@ -2,14 +2,18 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Footer from './Footer';
 
-describe('Footer Component Tests', () => {
-    const footer = shallow(<Footer />);
+describe("Testing <Footer /> component", () => {
+  let wrapper;
 
-    it('Renders without crashing', () => {
-        expect(footer).toBeDefined();
-    });
+  beforeEach(() => {
+    wrapper = shallow(<Footer />);
+  });
 
-    it('Renders the text "Copyright"', () => {
-        expect(footer.find('p').text()).toBe(/Copyright/);
-    });
+  it("Footer Component renders without crashing", () => {
+    expect(wrapper.exists());
+  });
+
+  it("Footer compoenent render at the very least the text “Copyright”", () => {
+    expect(wrapper.find("Copyright").at(0)).toBeDefined();
+  });
 });
