@@ -2,50 +2,50 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
 
-describe('Test App.js', () => {
-    let wrapper;
+describe('App Component Tests', () => {
+    let app;
 
     beforeEach(() => {
-        wrapper = shallow(<App />);
+        app = shallow(<App />);
     });
 
-    it('Renders App without crashing', () => {
-        expect(wrapper.exists());
+    it('Renders without crashing', () => {
+        expect(app).toBeDefined();
     });
 
-    it('App component contains Notifications component', () => {
-        expect(wrapper.find("Notifications")).toHaveLength(1);
+    it('Contains Notifications component', () => {
+        expect(app.find('Notifications')).toHaveLength(1);
     });
 
-    it('App component contains Header component', () => {
-        expect(wrapper.find("Header")).toHaveLength(1);
+    it('Contains Header component', () => {
+        expect(app.find('Header')).toHaveLength(1);
     });
 
-    it('App component contains Login component', () => {
-        expect(wrapper.find("Login")).toHaveLength(1);
+    it('Contains Login component', () => {
+        expect(app.find('Login')).toHaveLength(1);
     });
 
-    it('App component contains Footer component', () => {
-        expect(wrapper.find("Footer")).toHaveLength(1);
+    it('Does not contain CourseList component', () => {
+        expect(app.find('CourseList')).not.toBeDefined();
     });
 
-    it('test to check that CourseList is not displayed inside App', () => {
-        expect(wrapper.find("CourseList")).toHaveLength(0);
+    it('Contains Footer component', () => {
+        expect(app.find('Footer')).toHaveLength(1);
     });
 });
 
-describe("Testing <App isLoggedIn={true} />", () => {
+describe('Test <App isLoggedIn={true} />', () => {
     let wrapper;
 
     beforeEach(() => {
         wrapper = shallow(<App isLoggedIn={true} />);
     });
 
-    it("the Login component is not included", () => {
-        expect(wrapper.find('Login')).toHaveLength(0);
+    it('Tests that Login component is not included', () => {
+        expect(wrapper.find('Login')).not.toBeDefined();
     });
 
-    it(" the CourseList component is included", () => {
-        expect(wrapper.find('CourseList').exists());
+    it('Tests that CourseList component is included', () => {
+        expect(wrapper.find('CourseList')).toBeDefined();
     });
 });

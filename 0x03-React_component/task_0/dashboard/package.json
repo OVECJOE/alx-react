@@ -1,22 +1,28 @@
 {
+  "homepage": "https://ovecjoe.github.io/alx-react/",
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
+    "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "@zarconontol/enzyme-adapter-react-18": "^0.7.3",
+    "enzyme": "^3.7.0",
+    "gh-pages": "^4.0.0",
+    "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "test-watch": "jest --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -37,7 +43,8 @@
     ]
   },
   "devDependencies": {
-    "enzyme": "^3.11.0",
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.0",
     "jest": "^28.1.0"
   }
 }
